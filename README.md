@@ -1,10 +1,7 @@
 # api_test_for_assurity
-|Author|shaluo|
-|---|---
+|Author|shaluo
 |E-mail|shaluoatnz@gmail.com
-|---|---
 |Enviroment|python 3.x
-|---|---
 |Framework|unitest
 
 Execute command:
