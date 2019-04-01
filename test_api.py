@@ -9,8 +9,16 @@ class TestApi(unittest.TestCase):
     def test_api(self):
         test_url = 'https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false'
         json_result = self.get_response_json(test_url)
+
+        #------------------------criteria 1--------------------------
+        self.assertIn('Name', json_result)
         self.assertEqual(json_result['Name'], 'Carbon credits', 'Criteria 1 failed')
+
+        #------------------------criteria 2--------------------------
+        self.assertIn('CanRelist', json_result)
         self.assertEqual(json_result['CanRelist'],True,'Criteria 2 failed')
+
+        #------------------------criteria 3--------------------------
         for each_element in json_result['Promotions']:
             if 'Name' in each_element and each_element['Name'] == 'Gallery':
                 self.assertIn('Description', each_element, 'Criteria 3 do not have a Description')
